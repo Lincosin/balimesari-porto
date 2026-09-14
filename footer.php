@@ -74,9 +74,9 @@
                     <h1 class="mb-2 text-lg md:text-xl font-bold">Bali Mesari Cycling Tour</h1>
                     <ul class="font-medium text-sm md:text-base">
                         <li><span>Jl. Raya Klausa, Klausa, Payangan, Gianyar, Bali, Indonesia, 80572</span></li>
-                        <li><a href="tel:+62817108891" class="hover:underline">+62 817-108-891</a></li>
+                        <li><a href="tel:+62817108891" class="hover:underline">+62 812-345-6789</a></li>
                         <li>
-                            <a href="mailto:balimesaricyclingtour@gmail.com" class="hover:underline">balimesaricyclingtour@gmail.com</a>
+                            <a href="#" class="hover:underline">balimesaricyclingtour@gmail.com</a>
                         </li>
                         <li>
                             <p>24 hours customer services</p>
