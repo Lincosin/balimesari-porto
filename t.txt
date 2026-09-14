@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+
+<body class="m-0 p-0 overflow-x-hidden">
+    <!-- Nav -->
+    <?php include 'header.php'; ?>
+    <!-- hero -->
+    <section class="hero relative h-screen">
+        <img src="img/hero.jpg" alt="Hero Image" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <p class="text-white text-5xl font-bold" style="font-family: 'Source Serif Pro', serif" data-aos="fade-up">
+                Gallery
+            </p>
+        </div>
+    </section>
+
+    <!-- slider -->
+
+    <div class="mt-60 mb-2 mt-mobile" data-aos="fade-up">
+        <div class="flex justify-center">
+            <p class="custom-underline font-semibold">Our Gallery</p>
+        </div>
+    </div>
+
+    <div class="gallery" data-aos="fade-up">
+        <div class="gallery-container">
+            <img src="img/img-1.jpg" class="gallery-item gallery-item-1" data-index="1" />
+            <img src="img/img-2.jpg" class="gallery-item gallery-item-2" data-index="2" />
+            <img src="img/img-3.jpg" class="gallery-item gallery-item-3" data-index="3" />
+            <img src="img/img-4.jpg" class="gallery-item gallery-item-4" data-index="4" />
+            <img src="img/img-5.jpg" class="gallery-item gallery-item-5" data-index="5" />
+        </div>
+        <div class="gallery-controls"></div>
+    </div>
+
+    <!-- more galleries -->
+    <div class="flex justify-center mt-60 mb-10" data-aos="fade-up">
+        <p class="custom-underline1 font-semibold">More Galleries</p>
+    </div>
+
+    <!-- tampilan dekstop -->
+    <div id="desktopView" class="desktop-view hidden md:block" data-aos="fade-up">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12 md:mb-52 md:ml-44 lg:ml-72">
+            <div class="grid gap-2">
+                <div>
+                    <img class="h-48 md:h-[236px] lg:h-[200px] xl:h-[236px] w-full object-cover rounded-sm" src="img/img-1.jpg" alt="Image 1" onclick="openPopup('img/img-1.jpg')" />
+                </div>
+                <div>
+                    <img class="h-40 md:h-[140px] lg:h-[120px] xl:h-[140px] w-full object-cover rounded-sm" src="img/img-2.jpg" alt="Image 2" onclick="openPopup('img/img-2.jpg')" />
+                </div>
+                <div>
+                    <img class="h-48 md:h-[241px] lg:h-[200px] xl:h-[241px] w-full object-cover rounded-sm" src="img/img-3.jpg" alt="Image 3" onclick="openPopup('img/img-3.jpg')" />
+                </div>
+            </div>
+            <div class="grid gap-2">
+                <div>
+                    <img class="h-[200px] md:h-[186px] lg:h-[160px] xl:h-[186px] w-full object-cover rounded-sm" src="img/img-4.jpg" alt="Image 4" onclick="openPopup('img/img-4.jpg')" />
+                </div>
+                <div>
+                    <img class="h-[300px] md:h-[230px] lg:h-[200px] xl:h-[230px] w-full object-cover rounded-sm" src="img/img-5.jpg" alt="Image 5" onclick="openPopup('img/img-5.jpg')" />
+                </div>
+                <div>
+                    <img class="h-36 md:h-[189px] lg:h-[160px] xl:h-[189px] w-full object-cover rounded-sm" src="img/img-10.jpg" alt="Image 10" onclick="openPopup('img/img-10.jpg')" />
+                </div>
+            </div>
+            <div class="grid gap-2">
+                <div>
+                    <img class="h-56 md:h-[295px] lg:h-[250px] xl:h-[295px] w-full object-cover rounded-sm" src="img/img-6.jpg" alt="Image 6" onclick="openPopup('img/img-6.jpg')" />
+                </div>
+                <div class="relative">
+                    <img class="h-[300px] md:h-[348px] lg:h-[300px] xl:h-[348px] w-full object-cover rounded-sm" src="img/img-8.jpg" alt="Image 8" onclick="openPopup('img/img-8.jpg')" />
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded-sm">
+                        <a href="all-gallery.php"><span class="text-white text-2xl font-semibold">view more</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-container" class="popup hidden">
+        <span class="popup-close" onclick="closePopup()">&times;</span>
+        <img id="popup-img" src="" alt="Popup Image" />
+    </div>
+
+
+    <!-- Tampilan Mobile -->
+    <div id="mobileView" class="md:hidden" data-aos="fade-up">
+        <div class="md:hidden grid grid-cols-1 gap-3 mb-52 ml-4 mr-4">
+            <div class="grid gap-2">
+                <div>
+                    <img class="h-auto w-full" src="img/img-1.jpg" alt="" onclick="openPopup('img/img-1.jpg')" />
+                </div>
+                <div>
+                    <img class="h-28 w-full" src="img/img-2.jpg" alt="" onclick="openPopup('img/img-2.jpg')" />
+                </div>
+                <div>
+                    <img class="h-52 w-full" src="img/img-3.jpg" alt="" onclick="openPopup('img/img-3.jpg')" />
+                </div>
+                <div>
+                    <img class="h-40 w-full" src="img/img-4.jpg" alt="" onclick="openPopup('img/img-4.jpg')" />
+                </div>
+                <div>
+                    <img class="h-44 w-full" src="img/img-5.jpg" alt="" onclick="openPopup('img/img-5.jpg')" />
+                </div>
+                <div>
+                    <img class="h-44 w-full" src="img/img-6.jpg" alt="" onclick="openPopup('img/img-6.jpg')" />
+                </div>
+                <div>
+                    <img class="h-auto w-full" src="img/img-7.jpg" alt="" onclick="openPopup('img/img-7.jpg')" />
+                </div>
+                <div>
+                    <img class="h-80 w-full" src="img/img-8.jpg" alt="" onclick="openPopup('img/img-8.jpg')" />
+                </div>
+                <a href="all-gallery.php" class="w-[190px] inline-block bg-green-600 text-white py-2 px-4 rounded font-semibold transition duration-300 hover:bg-green-700">
+                    Read More Berita
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Container -->
+    <!-- <div id="popup-container" class="popup">
+        <span class="popup-close" onclick="closePopup()">&times;</span>
+        <img id="popup-img" src="" alt="" />
+    </div> -->
+
+    <!-- Floating WhatsApp Button -->
+    <a href="#" class="floating-wa-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <?php include 'footer.php'; ?>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true, // Animasi hanya terjadi sekali saat pertama kali masuk
+        });
+
+        // Fungsi untuk membuka pop-up
+        function openPopup(imgSrc) {
+            const popup = document.getElementById("popup-container");
+            const popupImg = document.getElementById("popup-img");
+            popupImg.src = imgSrc;
+            popup.classList.remove("hidden");
+            popup.classList.add("flex");
+        }
+
+        // Fungsi untuk menutup pop-up
+        function closePopup() {
+            const popup = document.getElementById("popup-container");
+            popup.classList.add("hidden");
+            popup.classList.remove("flex");
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const galleryImages = document.querySelectorAll(".gallery img, .desktop-view img, .md\\:hidden img");
+            galleryImages.forEach(img => {
+                img.addEventListener("click", function () {
+                    openPopup(this.src);
+                });
+            });
+        });
+    </script>
+    <script src="js/gallery.js"></script>
+</body>
+
+</html>
